@@ -1,0 +1,18 @@
+URL: /
+Timestamp: Sun Nov 15 2020 00:00:25 GMT-0600 (Central Standard Time)
+
+URL: /favicon.ico
+Timestamp: Sun Nov 15 2020 00:00:25 GMT-0600 (Central Standard Time)
+
+URL: /
+Timestamp: Sun Nov 15 2020 00:02:00 GMT-0600 (Central Standard Time)
+
+URL: /favicon.ico
+Timestamp: Sun Nov 15 2020 00:02:00 GMT-0600 (Central Standard Time)
+
+URL: /documentation
+Timestamp: Sun Nov 15 2020 00:08:43 GMT-0600 (Central Standard Time)
+
+URL: /favicon.ico
+Timestamp: Sun Nov 15 2020 00:08:44 GMT-0600 (Central Standard Time)
+
