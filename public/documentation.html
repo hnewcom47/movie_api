@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DOCUMENTATION</title>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 
 <body>
@@ -20,6 +21,119 @@
     <p>To build the server-side component of a "movies" web application.</p>
     <p>The web application will provide users with access to information about different movies, directors, and genres.</p>
     <p>Users will be able to sign up, update their personal information, and create a list of their favorite movies.</p>
+  </div>
+
+  <div>
+    <h3>Endpoint Documentation:</h3>
+    <table>
+      <tr>
+        <th>Business Logic</th>
+        <th>URL (Endpoint)</th>
+        <th>HTTP Method</th>
+        <th>Query Parameters</th>
+        <th>Request Body Data Format</th>
+        <th>Request Example</th>
+        <th>Response Body Data Format</th>
+        <th>Response Example</th>
+      </tr>
+      <tr>
+        <td>Returns a list of all movies</td>
+        <td>/movies</td>
+        <td>GET</td>
+        <td>None</td>
+        <td>None</td>
+        <td>/movies</td>
+        <td>JSON
+        <td>{<br>Title: The Lord of the Rings,<br>Title: Pirates of the Caribbean,<br>Title: The Matrix,<br> Title: Parasite,<br>...<br>}</td>
+      </tr>
+      <tr>
+        <td>Returns data about a single movie by title</td>
+        <td>/movies/:title</td>
+        <td>GET</td>
+        <td>Use "_" for spaces (when needed)</td>
+        <td>None</td>
+        <td>/movies/the_lord_of_the_rings
+        <td>JSON</td>
+        <td>{<br>Title: The Lord of the Rings,<br><br>Description: The future of civilization rests in the fate of the One Ring, which has been lost for 
+          centuries. Powerful forces are unrelenting in their search for it. But fate has placed it in the hands of a young Hobbit named Frodo B
+          aggins (Elijah Wood), who inherits the Ring and steps into legend. A daunting task lies ahead for Frodo when he becomes the Ringbearer - 
+          to destroy the One Ring in the fires of Mount Doom where it was forged.,<br><br>Genre: Fantasy, Adventure,<br><br>Director: Peter Jackson,<br><br>
+          Image URL: LOTR.png,<br><br>Featured: true<br>}</td>
+      <tr>
+        <td>Returns information about a genre by name/title</td>
+        <td>/movies/genres/:genre</td>
+        <td>GET</td>
+        <td>Use "_" for spaces (when needed)</td>
+        <td>None</td>
+        <td>/movies/genres/fantasy</td>
+        <td>JSON</td>
+        <td>{<br>Genre: Fantasy,<br><br>Description: Fantasy films are films that belong to the fantasy genre with fantastic themes, usually magic, 
+          supernatural events, mythology, folklore, or exotic fantasy worlds. The genre is considered a form of speculative fiction alongside 
+          science fiction films and horror films, although the genres do overlap.<br>}</td>
+      </tr>
+      <tr>
+        <td>Returns information about a director by name</td>
+        <td>/movies/directors/:name</td>
+        <td>GET</td>
+        <td>Use "_" for spaces (when needed)</td>
+        <td>None</td>
+        <td>/movies/directors/peter_jackson</td>
+        <td>JSON</td>
+        <td>{<br>Name: Peter Jackson,<br><br>Bio: Sir Peter Robert Jackson is a New Zealand film director, producer, and screenwriter. 
+          He is best known as the director, writer, and producer of the Lord of the Rings trilogy and the Hobbit trilogy, both of which are adapted 
+          from the novels of the same name by J. R. R. Tolkien.,<br><br>Born: October 31, 1961,<br><br>Died: -<br>}</td>
+      </tr>
+      <tr>
+        <td>Allows new users to register</td>
+        <td>/users</td>
+        <td>POST</td>
+        <td>None</td>
+        <td>JSON</td>
+        <td>{<br>Username: janesmith,<br><br>Password: password1,<br><br>Email: janesmith@gmail.com,<br><br>Date of Birth: 01/01/1901<br>}</td>
+        <td>JSON</td>
+        <td>{<br>Username: janesmith,<br><br>Password: password1,<br><br>Email: janesmith@gmail.com,<br><br>Date of Birth: 01/01/1901<br>}</td>
+      </tr>
+      <tr>
+        <td>Allows users to update their user information</td>
+        <td>/users/:username</td>
+        <td>PUT</td>
+        <td>None</td>
+        <td>JSON</td>
+        <td>{<br>Username: janesmith1,<br><br> Password: password1,<br><br>Email: janesmith@gmail.com,<br><br>Date of Birth: 01/01/1901<br>}</td>
+        <td>JSON</td>
+        <td>{<br>Username: jamesmith1,<br><br> Password: password1,<br><br>Email: jamesmith@gmail.com,<br><br>Date of Birth: 01/01/1901<br>}</td>
+      </tr>
+      <tr>
+        <td>Allows users to add a movie to their list of favorites</td>
+        <td>/users/:username/movies/:movieID</td>
+        <td>POST</td>
+        <td>None</td>
+        <td>JSON</td>
+        <td>{<br>Title: Beetlejuice<br>}</td>
+        <td>Message</td>
+        <td>Beetlejuice was successfully added to your list of favorite movies.</td>
+      </tr>
+      <tr>
+        <td>Allows users to remove a movie from their list of favorites</td>
+        <td>/users/:username/movies/:movieID</td>
+        <td>DELETE</td>
+        <td>None</td>
+        <td>None</td>
+        <td>/users/janesmith/movies/beetlejuice</td>
+        <td>Message
+        <td>Beetlejuice was successfully removed from your list of favorite movies.</td>
+      </tr>
+      <tr>
+        <td>Allows existing users to deregister</td>
+        <td>/users/:username</td>
+        <td>DELETE</td>
+        <td>None</td>
+        <td>None</td>
+        <td>/users/janesmith</td>
+        <td>Message</td>
+        <td>User janesmith was successfully unregistered from myFlix.</td>
+      </tr>
+    </table>
   </div>
 
 </body>
