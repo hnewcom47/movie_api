@@ -29,7 +29,11 @@ const { check, validationResult } = require('express-validator');
 app.use(cors({
   origin: (origin, callback) => {
     if(!origin) return callback(null, true);
+<<<<<<< HEAD
     if(allowedOrigins.indexOf(origin) === -1){ // if a specific origin isn’t found on the list of allowed origins
+=======
+    if(allowedOrigins.indexOf(origin) === -1){ // If a specific origin isn’t found on the list of allowed origins
+>>>>>>> 981b00b949b0c45c5743b4d77eb73a52eb8e67e6
       let message = 'The CORS policy for this application doesn’t allow access from origin ' + origin;
       return callback(new Error(message ), false);
     }
